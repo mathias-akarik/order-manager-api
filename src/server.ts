@@ -6,13 +6,19 @@ import orderRoutes from './routes/orderRoutes';
 
 const app = express();
 
-// Enable CORS for all origins (you can restrict it to a specific origin later)
-app.use(cors({
-  origin: ['http://localhost:3000', 'https://raftlabs-order-manager-assessment.vercel.app'], 
+// CORS configuration
+const corsOptions = {
+  origin: [
+    'http://localhost:3000', // Allow local development
+    'https://raftlabs-order-manager-assessment.vercel.app' // Allow production frontend
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
-}));
+  credentials: true,  // Allow cookies and credentials
+  allowedHeaders: ['Content-Type', 'Authorization'],  // Allow specific headers
+};
 
+// Apply CORS middleware globally
+app.use(cors(corsOptions));
 
 // Use morgan for logging every request to the console
 app.use(morgan('dev'));  // Logs requests in a concise format
