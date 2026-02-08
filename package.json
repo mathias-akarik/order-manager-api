@@ -5,13 +5,9 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "start": "node dist/server.js",
-    "dev": "nodemon",
+    "dev": "nodemon --watch src --exec ts-node src/server.ts",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1",
