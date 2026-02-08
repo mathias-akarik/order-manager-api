@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "prestart": "npm run build",
     "start": "node dist/server.js",
+    "build": "rimraf dist && tsc",
     "dev": "nodemon --watch src --exec ts-node src/server.ts",
     "test": "jest"
   },
