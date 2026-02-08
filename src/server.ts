@@ -9,16 +9,15 @@ const app = express();
 // CORS configuration
 const corsOptions = {
   origin: [
-    'https://order-manager-assessment.vercel.app/', // Production frontend
-    'http://localhost:3000',  // Local development
+    'https://order-manager-assessment.vercel.app', // Production frontend URL
+    'http://localhost:3000', // Local development URL
   ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,  // Allow cookies and credentials
-  allowedHeaders: ['Content-Type', 'Authorization'],  // Allow specific headers
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
 };
 
-// Apply CORS middleware globally
-app.use(cors(corsOptions));  // This will handle OPTIONS requests automatically
+// Apply CORS middleware globally (this will handle OPTIONS requests automatically)
+app.use(cors(corsOptions));
 
 // Log the headers of each response for debugging purposes
 app.use((req, res, next) => {
@@ -28,8 +27,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(morgan('dev'));  // Logs requests in a concise format
-app.use(express.json());
+app.use(morgan('dev')); // Logs requests in a concise format
+app.use(express.json()); // For parsing incoming JSON requests
 
 // Use /api prefix for menu and order routes
 app.use('/api', menuRoutes);  
