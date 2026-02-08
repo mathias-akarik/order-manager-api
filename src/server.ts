@@ -18,7 +18,7 @@ const corsOptions = {
 };
 
 // Apply CORS middleware globally
-app.use(cors(corsOptions));
+app.use(cors(corsOptions));  // This will handle OPTIONS requests automatically
 
 // Log the headers of each response for debugging purposes
 app.use((req, res, next) => {
@@ -39,9 +39,6 @@ app.use('/api', orderRoutes);
 app.get('/', (req: Request, res: Response) => {
   res.send('Order Management API');
 });
-
-// CORS preflight request handling
-app.options('*', cors(corsOptions));  // Explicit handling for OPTIONS requests
 
 // Start the server
 const PORT = process.env.PORT || 10000;
