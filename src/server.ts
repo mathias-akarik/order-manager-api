@@ -8,7 +8,7 @@ const app = express();
 
 // Enable CORS for all origins (you can restrict it to a specific origin later)
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://your-app-name.vercel.app'], 
+  origin: ['http://localhost:3000', 'https://raftlabs-order-manager-assessment-ka838ig4s.vercel.app'], 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
