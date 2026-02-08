@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "dist/server.js",
   "scripts": {
-    "prestart": "npm run build",
-    "start": "node dist/server.js",
-    "build": "rimraf dist && tsc",
-    "dev": "nodemon --watch src --exec ts-node src/server.ts",
+    "prestart": "npm run build",  
+    "start": "node dist/server.js",  
+    "build": "rimraf dist && tsc && echo 'Build completed, dist folder contents:' && ls -R dist", 
+    "dev": "nodemon --watch src --exec ts-node src/server.ts",  
     "test": "jest"
   },
   "dependencies": {

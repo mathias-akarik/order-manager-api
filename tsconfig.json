@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "CommonJS",
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "outDir": "./dist",  // Ensure TypeScript outputs to dist
+    "rootDir": "./src",  // Root of your source files
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
