@@ -10,40 +10,38 @@ const app = express();
 const corsOptions = {
   origin: [
     'http://localhost:3000',  // Allow local development
-    'https://raftlabs-order-manager-assessment.vercel.app',  // Allow production frontend
+    'https://raftlabs-order-manager-assessment.vercel.app'  // Allow production frontend
   ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific methods
-  credentials: true,  // Allow credentials (cookies, authorization headers)
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,  // Allow cookies and credentials
   allowedHeaders: ['Content-Type', 'Authorization'],  // Allow specific headers
+  preflightContinue: false,  // Don't pass control to the next middleware if CORS is blocked
 };
 
-// Apply CORS middleware globally before routes
-app.use(cors(corsOptions));
+// Apply CORS middleware globally
+app.use(cors(corsOptions)); // This ensures that CORS headers are applied to all routes
 
 // Use morgan for logging every request to the console
 app.use(morgan('dev'));  // Logs requests in a concise format
 
-// Parse JSON request bodies
 app.use(express.json());  // For parsing application/json
 
 // Use /api prefix for menu and order routes
-app.use('/api', menuRoutes);  // Menu routes with /api prefix
-app.use('/api', orderRoutes);  // Order routes with /api prefix
+app.use('/api', menuRoutes);  // Prefix with /api
+app.use('/api', orderRoutes);  // Prefix with /api
 
-// Basic server health check route
+// Basic server check
 app.get('/', (req: Request, res: Response) => {
   res.send('Order Management API');
 });
 
-// Export app for testing purposes (e.g. for unit tests)
+// Export app for testing purposes
 export default app;
 
-// Set the server to listen on the appropriate port (Render uses 10000 by default)
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 10000; // Render uses 10000 by default
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
 }
-
