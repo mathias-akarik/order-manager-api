@@ -9,7 +9,7 @@ const app = express();
 // CORS configuration
 const corsOptions = {
   origin: [
-    'https://raftlabs-order-manager-assessment.vercel.app', // Production frontend
+    'https://order-manager-assessment.vercel.app/', // Production frontend
     'http://localhost:3000',  // Local development
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
