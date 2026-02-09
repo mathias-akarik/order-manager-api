@@ -12,7 +12,7 @@ const corsOptions = {
     'https://order-manager-assessment.vercel.app', // Production frontend URL
     'http://localhost:3000', // Local development URL
   ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+  // methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
 };
 
