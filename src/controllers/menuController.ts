@@ -25,7 +25,7 @@ const menu: MenuItem[] = [
       name: 'Heirloom Burrata',
       description: 'Fresh burrata, heirloom tomatoes, aged balsamic, basil oil, and toasted sourdough crumbles.',
       price: 19.00,
-      image: 'https://images.unsplash.com/photo-1608897013039-887f3c09080b?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80&w=800',
       category: 'Salads'
     },
     {
@@ -33,7 +33,7 @@ const menu: MenuItem[] = [
       name: 'Pan-Seared Scallops',
       description: 'Diver scallops, pea purée, crispy prosciutto, and lemon-butter reduction.',
       price: 32.50,
-      image: 'https://images.unsplash.com/photo-1532636875304-1c89119d9b4f?auto=format&fit=crop&q=80&w=800',
+      image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80&w=800',
       category: 'Mains'
     },
     {
